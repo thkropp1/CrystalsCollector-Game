@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CrystalsCollector! Game</title>
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- added a link to style.css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body background="assets/images/SeagreenPattern.jpg">
+
+
+  <div class="container1">
+   <div class="row">
+      <h1>CrystalsCollector!</h1>
+   </div> <!--row --> 
+  </div> <!-- container1 -->
+
+
+  <div class="container2"> <!-- Instructions -->
+    <div class="row">
+        <p>You will be given a random number at the start of the game.</p>
+       
+        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+       
+        <p>You win the game by matching your total score to the random number, and you lose the game if your total score goes above the random number.</p>
+        
+        <p>The value of each crystal is hidden from you until you click on it.</p>
+        
+        <p>Each time when the game starts, the game will change the values of each crystal.</p>
+    </div> <!-- row -->  
+  </div> <!-- container2 -->
+
+
+  <div class="container3">
+    <div class="row">
+      <div class="col-md-4"> <!-- Random number -->
+        <div id="random-number"></div>
+      </div> <!-- col-md-4 -->
+
+      <div class="col-md-2"> <!-- Random number -->
+         <div id="win"></div>
+         <div id="losses"></div>
+      </div> <!-- col-md-2 -->
+    </div> <!-- row -->  
+  </div> <!-- container3 -->
+
+      
+  <div class="container4"> <!-- Crystals Panel -->
+    <div class="row">
+        <button id="button-1" class="btn btn-primary number"><img id="image1" src="assets/images/Hexagon.jpg" /></button>
+        <button id="button-2" class="btn btn-primary number"><img id="image2" src="assets/images/Diamond.jpg" /></button>
+        <button id="button-3" class="btn btn-primary number"><img id="image3" src="assets/images/Octagon.jpg" /></button>
+        <button id="button-4" class="btn btn-primary number"><img id="image4" src="assets/images/Emerald.jpg" /></button>
+    </div> <!-- row -->
+  </div> <!-- container4 -->
+
+
+  <div class="container5"> <!-- Result Panel -->
+    <div class="row">
+      <div class="col-sm-6 col-md-8 col-lg-6"> 
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Your total score is:</h3>
+          </div> <!-- panel-heading -->
+          <div class="panel-body">
+            <h1 id="totalscore"></h1>
+          </div> <!-- panel-body -->
+        </div> <!-- panel panel-default -->
+      </div> <!-- col-md-3 -->
+    </div> <!-- row -->
+  </div> <!-- container5 -->
+
+
+<!-- Added a link to game.js -->
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+  
+  <script>
+
+  // Make our variables global to the runtime of our application
+
+      var crystal1 = 0;
+      var crystal2 = 0;
+      var crystal3 = 0;
+      var crystal4 = 0;
+      var randNum = 0;
+      var win = 0;
+      var losses = 0;
+      var totalscore = 0;
+
+      // Call initializeGame() function to initialize the game.
+      // This way when the user either wins or loses, we can guarantee a reset of the app.
+      initializeGame(); 
+
+      console.log("**Wins: " + win);
+      console.log("**Losses: " + losses);
+      console.log("**Total score: " + totalscore);
+
+      // Call pressCrystal() function to play the game
+      pressCrystal();
+
+</script>
+</body>
+</html>
