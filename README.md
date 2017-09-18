@@ -1,5 +1,7 @@
 # CrystalsCollector-Game
-CrystalsCollector Game using jQuery
+CrystalsCollector game app dynamically updates the HTML pages with the jQuery library.
+
+Before You Begin:
 
 The player will have to guess the answer, just like in Hangman. This time, though, the player will guess with numbers instead of letters.
 
